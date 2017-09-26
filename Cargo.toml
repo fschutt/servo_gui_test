@@ -1,0 +1,25 @@
+[package]
+name = "servox11test"
+version = "0.1.0"
+authors = ["Felix Schütt <felix.schuett@maps4print.com>"]
+
+[dependencies]
+libservo = { path = "../servo/components/servo", features = [] }
+glutin = "0.9"
+
+[profile.release]
+debug=false
+lto=true
+
+[package.metadata.deb]
+maintainer = "Felix Schütt <felix.schuett@maps4print.com>"
+copyright = "2017, Felix Schütt <felix.schuett@maps4print.com>"
+license-file = ["LICENSE", "3"]
+extended-description = """File finder for the W Desktop Environment"""
+depends = "$auto"
+section = "utility"
+priority = "optional"
+assets = [
+    ["target/release/servox11test", "usr/bin/", "755"],
+    ["README.md", "/usr/share/doc/servox11test/README", "644"],
+]

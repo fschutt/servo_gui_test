@@ -1,0 +1,3 @@
+-- -C prefer-dynamic
+lto=true
+panic='abort'
